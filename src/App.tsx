@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from "react";
+import NewSearch from "./components/newSearch/NewSearch"
+import {songLoader} from "./data/songs";
+import {SongList} from "./components/songsLogic/SongList";
+import {Player} from "./components/player/Player";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    const [currentSong, setCurrentSong] = useState();
 
+    const songs = songLoader();
+    return (
+        <div className="main">
+            <NewSearch/>
+            <Player songs={songs} currentSong={currentSong} setCurrentSong={setCurrentSong}/>
+            <p>show this</p>
+            <SongList songs={songs} currentSong={currentSong} setCurrentSong={setCurrentSong}/>
+        </div>
+
+    )
+};
 export default App;

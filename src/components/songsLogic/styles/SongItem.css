@@ -1,0 +1,42 @@
+.headRow{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    border-radius: 12px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+}
+tr{
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    border-radius: 12px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+td {
+    display: flex;
+    width: 25%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+th {
+    display: flex;
+    width: 25%;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+thead{
+    border-radius: 12px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.25);
+    box-shadow: 0 8px 8px rgba(0, 0, 0, 0.25);
+}
+
+
+
