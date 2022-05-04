@@ -6,7 +6,7 @@ import {SongList} from "./components/songsLogic/SongList";
 import {Player} from "./components/player/Player";
 
 function App() {
-    const [currentSong, setCurrentSong] = useState();
+    const [currentSong, setCurrentSong] = useState<number>(-1);
 
     const songs = songLoader();
     return (
@@ -18,5 +18,5 @@ function App() {
         </div>
 
     )
-};
+}
 export default App;

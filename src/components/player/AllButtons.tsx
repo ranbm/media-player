@@ -1,20 +1,26 @@
+import {Song} from "../../data/songs";
 
+type AllButtonsProps = {
+    songs:Song[],
+    currentSong:number,
+    setCurrentSong(id:number):void
+}
 
-const AllButtons = ({songs,currentSong,setCurrentSong}) => {
+const AllButtons = (props:AllButtonsProps) => {
     const PlayNext = () => {
-        if (currentSong<songs.length-1){
-                setCurrentSong(currentSong+1);
+        if (props.currentSong<props.songs.length-1){
+                props.setCurrentSong(props.currentSong+1);
             }
         else{
-            setCurrentSong(0);
+            props.setCurrentSong(0);
         }
     }
     const playPrev = () => {
-        if (currentSong>0){
-                setCurrentSong(currentSong-1);
+        if (props.currentSong>0){
+                props.setCurrentSong(props.currentSong-1);
             }
         else{
-            setCurrentSong(songs.length-1);
+            props.setCurrentSong(props.songs.length-1);
         }
     }
     return (

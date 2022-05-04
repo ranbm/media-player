@@ -6,22 +6,24 @@ import {Song} from "../../data/songs";
 
 type SongListProps = {
     songs: Song[],
+    currentSong: number,
+    setCurrentSong(id:number):void,
 }
 
-export const SongList = ({songs, currentSong, setCurrentSong}, props:SongListProps) => {
+export const SongList = (props:SongListProps) => {
 
     const [filteredArtist, setFilteredArtist] = useState('')
 
-    const filterChangeHandler = (selectedArtist) => {
+    const filterChangeHandler = (selectedArtist:string) => {
         setFilteredArtist(selectedArtist);
     };
 
-    const filteredSongList = songs.filter(song => {
+    const filteredSongList = props.songs.filter(song => {
         return song.artist === filteredArtist;
     });
 
 
-    const previewSongs = filteredSongList.length > 0 ? filteredSongList : songs
+    const previewSongs = filteredSongList.length > 0 ? filteredSongList : props.songs
 
 
     return (
@@ -45,8 +47,8 @@ export const SongList = ({songs, currentSong, setCurrentSong}, props:SongListPro
                 {previewSongs.map((song) =>
                         <SongItem
                             Song={song}
-                            playNow={currentSong}
-                            setCurrentSong={setCurrentSong}
+                            playNow={props.currentSong}
+                            setCurrentSong={props.setCurrentSong}
                             key={song.id}
                             />
                     )
